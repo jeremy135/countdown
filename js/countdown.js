@@ -42,7 +42,7 @@ function counter(interval, timeStamp) {
     tempTimer = '<div id="timeback"><span id="days"> ' + days + '<span class="words">' + days_word + '</span></span>';
     
     
-    tempTimer += '<span id="hours"> '+h ours + '<span class="words">' + hours_word + '</span></span>';
+    tempTimer += '<span id="hours"> ' + hours + '<span class="words">' + hours_word + '</span></span>';
     
     
     tempTimer += '<span id="minutes">' + minutes +  '<span class="words">' + minutes_word + '</span></span>';
