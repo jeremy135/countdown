@@ -6,49 +6,54 @@ function counter(interval, timeStamp) {
         }
     ;
     }
-    var now = new Date();
-    var days;
-    var hours;
-    var minutes;
-    var seconds;
-    var totalSeconds = (parseInt(now.getTime()/1000));
-    var RemainsSec = (timeStamp - totalSeconds);
+    var now = new Date(),
+    	days = 0,
+    	hours = 0,
+    	minutes = 0,
+    	seconds = 0,
+    	totalSeconds = (parseInt(now.getTime()/1000)),
+    	RemainsSec = (timeStamp - totalSeconds),
+    	tempTimer = '';
     
     if(RemainsSec <= 0) {
-        tempTimer ='<a href="/task">Финал Стартовал!</a>';
+        tempTimer ='<div>Финал Стартовал!</div>';
     }
-    var days_word = " дней "
+    
     days = parseInt(RemainsSec/86400);
+    
     var diff_ = RemainsSec%86400;
+    
     hours = parseInt(diff_/3600);
+    
     var diff__ = diff_%3600;
+    
     minutes = parseInt(diff__/60);
+    
     seconds = RemainsSec%60;
-    days_word = pluralForm(days, 'день', 'дня', 'дней'); 
-    minutes_word = pluralForm(minutes, 'минута', 'минуты', 'минут');
-    seconds_word = pluralForm(seconds, 'секунда', 'секунды', 'секунд');
-    hours_word = pluralForm(hours, 'час', 'часа', 'часов');
+    
+    var days_word = pluralForm(days, 'день', 'дня', 'дней'),
+    	minutes_word = pluralForm(minutes, 'минута', 'минуты', 'минут'),
+    	seconds_word = pluralForm(seconds, 'секунда', 'секунды', 'секунд'),
+    	hours_word = pluralForm(hours, 'час', 'часа', 'часов');
    
-    var day_show = false;
-    var tempTimer = '';
-    if(days != '0') {
-        tempTimer = '<div id="timeback"><span id="days"> ' +days+ '<span class="words">' +days_word+ '</span></span>';
-        day_show = true;
-    } 
-    if(hours != '0') {
-        tempTimer += '<span id="hours"> '+hours + '<span class="words">' + hours_word + '</span></span>';
-    }
-    if(minutes != '0') {
-        tempTimer += '<span id="minutes">' +minutes+  '<span class="words">' +minutes_word+ '</span></span>';
-    }
    
-        tempTimer += '<span id="seconds"> ' +seconds+'<span class="words">' +seconds_word+ '</span></span></div>';
+    tempTimer = '';
+    
+    tempTimer = '<div id="timeback"><span id="days"> ' + days + '<span class="words">' + days_word + '</span></span>';
+    
+    
+    tempTimer += '<span id="hours"> '+h ours + '<span class="words">' + hours_word + '</span></span>';
+    
+    
+    tempTimer += '<span id="minutes">' + minutes +  '<span class="words">' + minutes_word + '</span></span>';
+    
+   
+    tempTimer += '<span id="seconds"> ' + seconds +'<span class="words">' + seconds_word + '</span></span></div>';
 
-    if(RemainsSec <= 0) {
-        tempTimer ='<a href="/task">Финал Стартовал!</a>';
-    }
     counterPlus(tempTimer);
+    
     setTimeout(function(){counter(interval, timeStamp)},interval);
+    
 }
 
  window.onload1 = counter('1000', '1354838399');
