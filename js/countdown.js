@@ -1,11 +1,11 @@
 function counter(interval, timeStamp) {
 
     var counterPlus = function (tempTimer) {
-        if(document.getElementById('timeback'))    {
+        if(document.getElementById('timeback')) {
             document.getElementById('timeback').innerHTML = tempTimer;
         }
-    ;
-    }
+    };
+    
     var now = new Date(),
     	days = 0,
     	hours = 0,
@@ -52,7 +52,7 @@ function counter(interval, timeStamp) {
 
     counterPlus(tempTimer);
     
-    setTimeout(function(){counter(interval, timeStamp)},interval);
+    setTimeout(function(){counter(interval, timeStamp);},interval);
     
 }
 
@@ -69,4 +69,4 @@ function pluralForm(n, form1, form2, form5) {
     if (n1 > 1 && n1 < 5) return form2;
     if (n1 == 1) return form1;
     return form5;
-}
+};
