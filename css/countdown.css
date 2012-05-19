@@ -1,0 +1,27 @@
+#days, #hours, #minutes, #seconds {
+    background: url(../countdown.png) no-repeat top left;
+    width: 91px;
+    height: 91px;
+    display: inline-block;
+    *display: inline;
+    zoom:1;
+    color: #fff;
+    font-size: 55px;
+    font-family: "10VDS";
+    text-align: center;
+    margin-right: 7px;
+}
+#days .words, #hours .words, #minutes .words, #seconds .words {
+    font-size: 12px;
+    color: #6c6a69;
+    font-family: "10VDS";
+    display: block;
+    margin-top: -20px;
+}
+#block-countdown-countdown {
+    margin-left: 90px;
+    margin-top: -52px;
+}
+#block-block-4 {
+    margin-top: -43px;
+}

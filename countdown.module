@@ -1,0 +1,27 @@
+<?php
+/**
+ * Implements hook_block_info().
+ */
+function countdown_block_info() {
+  $blocks = array();
+  $blocks['countdown'] = array(
+    'info' => t('countdown'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  return $blocks;
+}
+
+function countdown_block_view($delta) {
+  if($delta == 'countdown') {
+    $block['subject'] = t('countdown');
+    $block['content'] = countdown_get();
+    return $block;
+  }
+}
+
+function countdown_get() {
+    drupal_add_js(drupal_get_path('module', 'countdown') . '/js/countdown.js');
+    drupal_add_css(drupal_get_path('module', 'countdown') . '/css/countdown.css');
+    $output = '<div id="timeback"><span id="days"> 00 </span><span id="hours"> 00 </span><span id="minutes"> 00 </span><span id="seconds"> 00 </span></div>';
+    return $output;
+}
