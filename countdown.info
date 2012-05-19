@@ -1,3 +1,11 @@
+; $Id$
+
 name = Countdown
+
 description = Countdown JS
+
+package = J Custom Modules
+
 core = 7.x
+
+version = "7.x-1.0"
